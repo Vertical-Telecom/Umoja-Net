@@ -1,26 +1,146 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/*
+ * Design tokens — Umoja Net
+ * Paleta extraída do UI Design (Home.png): violeta da marca, roxo profundo
+ * para fundos escuros e laranja/âmbar como destaque.
+ */
+/*
+ * Campton (fonte comercial, títulos). Colocar o ficheiro licenciado em
+ * public/fonts/Campton-Book.woff2, Campton-SemiBold.woff2 e Campton-Bold.woff2 (ou .woff/.otf). Se estiver instalada no
+ * computador também é usada. Sem o ficheiro, os títulos usam a Outfit.
+ */
+@font-face {
+  font-family: "Campton";
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  src:
+    local("Campton Book"),
+    local("Campton-Book"),
+    url("/fonts/Campton-Book.woff2") format("woff2"),
+    url("/fonts/Campton-Book.woff") format("woff"),
+    url("/fonts/Campton-Book.otf") format("opentype");
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+@font-face {
+  font-family: "Campton";
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+  src:
+    local("Campton SemiBold"),
+    local("Campton-SemiBold"),
+    url("/fonts/Campton-SemiBold.woff2") format("woff2"),
+    url("/fonts/Campton-SemiBold.woff") format("woff"),
+    url("/fonts/Campton-SemiBold.otf") format("opentype");
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@font-face {
+  font-family: "Campton";
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  src:
+    local("Campton Bold"),
+    local("Campton-Bold"),
+    url("/fonts/Campton-Bold.woff2") format("woff2"),
+    url("/fonts/Campton-Bold.woff") format("woff"),
+    url("/fonts/Campton-Bold.otf") format("opentype");
+}
+
+@theme {
+  --color-brand-50: #f4f1ff;
+  --color-brand-100: #eae4ff;
+  --color-brand-200: #d5cbff;
+  --color-brand-300: #b4a3ff;
+  --color-brand-400: #8f74ff;
+  --color-brand-500: #7556ff;
+  --color-brand-600: #6440f5;
+  --color-brand-700: #5230d6;
+  --color-brand-800: #3a1d9c;
+  --color-brand-900: #261050;
+  --color-brand-950: #170733;
+
+  --color-ink: #1e1b3a;
+  /* Foundation/Blue/blue-600 (texto dos botões claros). Confirmar o hex no Figma. */
+  --color-foundation-blue-600: #140034;
+  /* Foundation/Purple/purple-50 (ícone do cartão do hero). Confirmar o hex no Figma. */
+  --color-foundation-purple-50: #f1ecff;
+  --color-muted: #66637b;
+  --color-surface: #f7f6fc;
+  --color-line: #ece9f6;
+
+  --color-accent-400: #ffc23d;
+  --color-accent-500: #ff9f1c;
+  --color-accent-600: #ff7a00;
+
+  --color-success: #22c55e;
+
+  --font-sans: var(--font-outfit), ui-sans-serif, system-ui, sans-serif;
+  --font-nav: var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Campton", var(--font-outfit), ui-sans-serif, system-ui, sans-serif;
+
+  --animate-fade-up: fade-up 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+
+  @keyframes fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(16px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@utility text-gradient-accent {
+  background-image: linear-gradient(
+    90deg,
+    var(--color-accent-400),
+    var(--color-accent-600)
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+@utility scrollbar-none {
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-white font-sans text-ink antialiased;
+  }
+
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-brand-500;
+  }
+
+  [id] {
+    scroll-margin-top: 6rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
