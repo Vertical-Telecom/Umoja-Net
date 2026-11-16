@@ -81,7 +81,7 @@ export function SiteHeader() {
       <div className="md:hidden">
         <div className="flex items-center justify-between rounded-full border border-white/15 bg-brand-950/60 py-1.5 pr-1.5 pl-2 backdrop-blur-md">
           <Link href="/" aria-label="Umoja Net — Início" className="flex min-h-11 items-center rounded-full px-2">
-            <Logo className="h-8 w-auto" />
+            <Logo className="h-8 w-auto" loading="eager" />
           </Link>
           <button
             type="button"

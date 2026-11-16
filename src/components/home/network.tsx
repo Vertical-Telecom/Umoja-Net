@@ -3,7 +3,7 @@ import { LUANDA_SIZE, luandaMunicipios } from "@/data/luanda-map";
 /**
  * "Nossa rede em expansão": mapa de Luanda (tirado do dashboard do Centro de Operações)
  * com os bairros onde a Umoja Net já está e para onde vai a seguir.
- * No mapa, os municípios com bairros ativos ficam preenchidos e os previstos ficam tracejados.
+ * No mapa, os municípios com bairros ativos ficam a amarelo (accent-400) e os previstos ficam tracejados.
  * PENDENTE (cronograma, ponto 3): secção da Home ou página própria.
  * PENDENTE: as posições [x, y] dos bairros são aproximadas (coordenadas do mapa original); confirmar com o cliente.
  */
@@ -51,7 +51,7 @@ const municipioStatus = (name: string): Status => {
 };
 
 const fillByStatus: Record<Status, string> = {
-  ativo: "fill-brand-500/30",
+  ativo: "fill-accent-400/70",
   previsto: "fill-[url(#rede-previsto)]",
   fora: "fill-white",
 };
@@ -192,7 +192,7 @@ export function Network() {
         <span className="flex items-center gap-2">
           <span
             aria-hidden="true"
-            className="size-4 rounded border-2 border-brand-600 bg-brand-500/30"
+            className="size-4 rounded border-2 border-brand-600 bg-accent-400/70"
           />
           Onde estamos
         </span>
