@@ -63,8 +63,14 @@
   --color-brand-950: #170733;
 
   --color-ink: #1e1b3a;
-  /* Foundation/Blue/blue-600 (texto dos botões claros). Confirmar o hex no Figma. */
-  --color-foundation-blue-600: #140034;
+  /* Foundation/Blue/blue-600 (texto dos botões claros), do Figma. */
+  --color-foundation-blue-600: #12002f;
+  /* Foundation/Blue/blue-200 (subtítulos), do Figma. */
+  --color-foundation-blue-200: #938aa2;
+  /* Foundation/Blue/blue-100 (copyright do rodapé), do Figma. */
+  --color-foundation-blue-100: #b6b0c0;
+  /* Foundation/Purple/purple-900 (texto dos separadores "Unidade"), do Figma. */
+  --color-foundation-purple-900: #33256a;
   /* Foundation/Purple/purple-50 (ícone do cartão do hero). Confirmar o hex no Figma. */
   --color-foundation-purple-50: #f1ecff;
   --color-muted: #66637b;
@@ -82,6 +88,24 @@
   --font-display: "Campton", var(--font-outfit), ui-sans-serif, system-ui, sans-serif;
 
   --animate-fade-up: fade-up 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-blink: blink 1s step-end infinite;
+
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0) rotate(0deg);
+    }
+    50% {
+      transform: translateY(-14px) rotate(4deg);
+    }
+  }
+
+  @keyframes blink {
+    50% {
+      opacity: 0;
+    }
+  }
 
   @keyframes fade-up {
     from {

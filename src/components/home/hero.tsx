@@ -4,10 +4,10 @@ import Image, { type StaticImageData } from "next/image";
 import { useEffect, useState, type ReactNode } from "react";
 import { site } from "@/lib/site";
 import { ArrowRight, Rocket } from "@/components/icons";
-import heroImage from "../../../public/img/home/home.png";
+import heroImage from "../../../public/img/homepage/home/home.png";
 // bg1.png / bg2.png: PNG extraído de BG1.svg / BG2.svg (o next/image não otimiza SVG).
-import bg1Image from "../../../public/img/home/bg1.png";
-import bg2Image from "../../../public/img/home/bg2.png";
+import bg1Image from "../../../public/img/homepage/home/bg1.png";
+import bg2Image from "../../../public/img/homepage/home/bg2.png";
 
 type Cta = { href: string; label: string; arrow?: boolean };
 

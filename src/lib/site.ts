@@ -10,7 +10,7 @@ export const site = {
   hireHref: "#contacto",
   /** Destino do botão "Fale connosco" (formulário, WhatsApp ou telefone). */
   contactHref: "#contacto",
-  copyright: "© 2025 Vertical Telecom | Todos os direitos reservados",
+  copyright: "Copyright © 2025 Vertical Telecom | Todos os direitos reservados",
 } as const;
 
 export const navLinks = [

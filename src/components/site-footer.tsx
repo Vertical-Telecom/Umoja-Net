@@ -1,24 +1,34 @@
+"use client";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { navLinks, site, socialLinks } from "@/lib/site";
 import { socialIcons } from "./icons";
 import { Logo } from "./logo";
 
-/** Faixa "Fale connosco" + rodapé com redes sociais. */
+/** Faixa "Fale connosco" + rodapé com redes sociais. Os links seguem o estilo do menu do topo. */
 export function SiteFooter() {
+  const pathname = usePathname();
+  const isActive = (href: string) => !href.includes("#") && href === pathname;
+
   return (
     <footer className="bg-brand-950 text-white">
       <div className="mx-auto max-w-6xl px-5 pt-16 sm:px-8 sm:pt-20">
         <section
           id="contacto"
           aria-labelledby="cta-titulo"
-          className="mx-auto max-w-4xl rounded-3xl bg-white px-6 py-12 text-center text-ink shadow-2xl shadow-brand-500/20 sm:py-14"
+          className="mx-auto flex max-w-4xl flex-col items-center gap-6 rounded-3xl bg-white px-6 py-12 text-center shadow-2xl shadow-brand-500/20 sm:py-14"
         >
-          <h2 id="cta-titulo" className="mx-auto max-w-sm text-2xl font-semibold text-balance sm:text-3xl">
-            Quer saber mais sobre o nosso trabalho?
+          <h2
+            id="cta-titulo"
+            className="max-w-[406px] font-display text-[26px] leading-[30px] font-semibold tracking-normal text-foundation-purple-900 sm:text-[28px] sm:leading-[28px]"
+          >
+            Quer saber mais sobre o <br className="hidden sm:block" />
+            nosso trabalho?
           </h2>
           <a
             href={site.contactHref}
-            className="mt-6 inline-flex min-h-11 cursor-pointer items-center rounded-full bg-brand-600 px-7 text-sm font-medium text-white transition-colors duration-200 hover:bg-brand-700"
+            className="inline-flex h-14 cursor-pointer items-center justify-center rounded-[60px] bg-brand-500 px-6 py-4 font-display text-base leading-6 font-semibold text-white transition-colors duration-200 hover:bg-brand-600"
           >
             Fale connosco
           </a>
@@ -29,10 +39,16 @@ export function SiteFooter() {
             <Logo />
           </Link>
           <nav aria-label="Rodapé">
-            <ul className="flex flex-wrap justify-center gap-x-8 gap-y-2 text-sm text-white/80">
+            <ul className="flex flex-wrap justify-center gap-2">
               {navLinks.map((l) => (
                 <li key={l.href}>
-                  <Link href={l.href} className="inline-block py-2 transition-colors hover:text-white">
+                  <Link
+                    href={l.href}
+                    aria-current={isActive(l.href) ? "page" : undefined}
+                    className={`inline-block rounded-full px-6 py-[13px] text-center font-nav text-lg leading-[18px] font-normal tracking-normal transition-colors duration-200 ${
+                      isActive(l.href) ? "bg-white text-ink" : "text-white hover:bg-white/10"
+                    }`}
+                  >
                     {l.label}
                   </Link>
                 </li>
@@ -57,7 +73,7 @@ export function SiteFooter() {
           </ul>
         </div>
 
-        <p className="mt-10 border-t border-white/10 py-8 text-center text-xs text-white/60">
+        <p className="mt-10 border-t border-white/10 py-8 text-center font-display text-base leading-[18px] font-normal text-foundation-blue-100 sm:text-lg">
           {site.copyright}
         </p>
       </div>

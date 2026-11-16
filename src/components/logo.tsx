@@ -1,6 +1,6 @@
 import Image from "next/image";
-import logoMark from "../../public/img/home/logo.svg";
-import logoHorizontal from "../../public/img/home/Logo Horizontal.svg";
+import logoMark from "../../public/img/homepage/home/logo.svg";
+import logoHorizontal from "../../public/img/homepage/home/Logo Horizontal.svg";
 
 /** Emblema circular oficial (centro do menu em desktop). Decorativo: o link à volta tem o nome acessível. */
 export function LogoMark({ className }: { className?: string }) {

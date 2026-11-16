@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useEffect, useRef, useState, type ComponentType, type SVGProps } from "react";
 import { site } from "@/lib/site";
 import { ArrowUp, BadgeCheck, Check, Download, Headphones, Rocket, Spinner, User } from "@/components/icons";
-import cardImage from "../../../public/img/beneficios/card.jpg";
+import cardImage from "../../../public/img/homepage/beneficios/card.jpg";
 
 /**
  * "Tudo o que espera de uma boa internet": os 3 benefícios contados como um fluxo

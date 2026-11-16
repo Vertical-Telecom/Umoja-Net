@@ -5,8 +5,8 @@ import { tvPackages } from "@/data/plans";
 import { site } from "@/lib/site";
 import { CarouselArrows, useScrollCarousel } from "@/components/carousel";
 import { ArrowRight } from "@/components/icons";
-import comboImage from "../../../public/img/home/combo.png";
-import dstvStreamLogo from "../../../public/img/home/logo_dstv_stream.svg";
+import comboImage from "../../../public/img/homepage/home/combo.png";
+import dstvStreamLogo from "../../../public/img/homepage/home/logo_dstv_stream.svg";
 
 /** "Entretenimento e velocidade": pacotes DSTV Stream sobre imagem. */
 export function Entertainment() {
