@@ -101,7 +101,7 @@ export function Network() {
     <section
       id="rede"
       aria-labelledby="rede-titulo"
-      className="relative z-10 -mt-12 rounded-t-[3rem] bg-white px-5 pt-20 pb-24 sm:px-8 sm:pt-24"
+      className="bg-white px-5 pt-12 pb-24 sm:px-8 sm:pt-16"
     >
       <div className="mx-auto max-w-4xl text-center">
         <h2
@@ -171,7 +171,7 @@ export function Network() {
                 textAnchor="middle"
                 dominantBaseline="middle"
                 transform={angle ? `rotate(${angle} ${x} ${y})` : undefined}
-                className="pointer-events-none fill-brand-900/35 font-mono uppercase"
+                className="pointer-events-none fill-brand-900/35 font-display uppercase"
                 style={{
                   fontSize: Math.max(size * 0.55, 11),
                   letterSpacing: 1,

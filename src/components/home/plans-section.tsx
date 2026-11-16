@@ -1,14 +1,15 @@
 "use client";
 
-import { useEffect, useRef, useState, type KeyboardEvent } from "react";
-import { internetPlans, internetTvPlans, type Plan } from "@/data/plans";
+import { useRef, useState, type KeyboardEvent } from "react";
+import { internetPlans, type Plan } from "@/data/plans";
 import { site } from "@/lib/site";
 import { CarouselArrows, useScrollCarousel } from "@/components/carousel";
 import { ArrowRight, Check } from "@/components/icons";
+import { TvPackages } from "@/components/plans/tv-packages";
 
 const tabs = [
-  { id: "simples", label: "Internet Simples", plans: internetPlans },
-  { id: "tv", label: "Internet+TV", plans: internetTvPlans },
+  { id: "simples", label: "Internet Simples" },
+  { id: "tv", label: "Internet+TV" },
 ] as const;
 
 function PlanCard({ plan }: { plan: Plan }) {
@@ -49,7 +50,7 @@ function PlanCard({ plan }: { plan: Plan }) {
 
       <a
         href={site.hireHref}
-        aria-label={`Contratar ${plan.name} por ${plan.price}`}
+        aria-label={/\d/.test(plan.price) ? `Contratar ${plan.name} por ${plan.price}` : `${plan.price}: ${plan.name}`}
         className={`group mt-6 inline-flex min-h-12 items-center justify-center gap-2 rounded-full border text-sm font-semibold transition-all duration-200 ${
           plan.featured
             ? "border-brand-600 bg-brand-600 text-white hover:bg-brand-700"
@@ -75,15 +76,31 @@ function PlanCard({ plan }: { plan: Plan }) {
   );
 }
 
+/** Carrossel dos planos de Internet Simples (3 visíveis em desktop; as setas mostram os restantes). */
+function PlanCarousel() {
+  const { ref: trackRef, canPrev, canNext, prev, next } = useScrollCarousel<HTMLDivElement>();
+  return (
+    <>
+      <div
+        ref={trackRef}
+        className="scrollbar-none relative -mx-5 flex snap-x snap-mandatory scroll-px-5 gap-5 overflow-x-auto px-5 pt-2 pb-6 sm:mx-0 sm:scroll-px-0 sm:px-0"
+      >
+        {internetPlans.map((plan) => (
+          <PlanCard key={plan.id} plan={plan} />
+        ))}
+      </div>
+      <CarouselArrows label="Navegar entre planos" canPrev={canPrev} canNext={canNext} onPrev={prev} onNext={next} />
+    </>
+  );
+}
+
+/**
+ * "Escolha o plano perfeito": separador Internet Simples (cartões dos planos)
+ * e separador Internet+TV (pacotes DSTV Stream).
+ */
 export function PlansSection() {
   const [active, setActive] = useState(0);
   const tabRefs = useRef<(HTMLButtonElement | null)[]>([]);
-  const { ref: trackRef, canPrev, canNext, prev, next, reset } = useScrollCarousel<HTMLDivElement>();
-
-  useEffect(() => {
-    trackRef.current?.scrollTo({ left: 0 });
-    reset();
-  }, [active, trackRef, reset]);
 
   const onTabKey = (e: KeyboardEvent<HTMLButtonElement>) => {
     if (e.key !== "ArrowRight" && e.key !== "ArrowLeft") return;
@@ -131,21 +148,7 @@ export function PlansSection() {
       </div>
 
       <div id={`painel-${tab.id}`} role="tabpanel" aria-labelledby={`tab-${tab.id}`} className="mt-12">
-        <div
-          ref={trackRef}
-          className="scrollbar-none relative -mx-5 flex snap-x snap-mandatory scroll-px-5 gap-5 overflow-x-auto px-5 pt-2 pb-6 sm:mx-0 sm:scroll-px-0 sm:px-0"
-        >
-          {tab.plans.map((plan) => (
-            <PlanCard key={plan.id} plan={plan} />
-          ))}
-        </div>
-        <CarouselArrows
-          label="Navegar entre planos"
-          canPrev={canPrev}
-          canNext={canNext}
-          onPrev={prev}
-          onNext={next}
-        />
+        {tab.id === "tv" ? <TvPackages /> : <PlanCarousel />}
       </div>
     </section>
   );

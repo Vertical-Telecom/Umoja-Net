@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useEffect, useRef, useState, type ComponentType, type SVGProps } from "react";
 import { site } from "@/lib/site";
+import { internetPlans } from "@/data/plans";
 import { ArrowUp, BadgeCheck, Check, Download, Headphones, Rocket, Spinner, User } from "@/components/icons";
 import cardImage from "../../../public/img/homepage/beneficios/card.jpg";
 
@@ -20,11 +21,15 @@ const downloadItems = [
   "Downloads pesados",
 ];
 
-const speedItems = [
-  { plan: "Ukamba · 6 Mbps", detail: "Uso individual, redes sociais e navegação" },
-  { plan: "Omunga · 8 Mbps", detail: "Casa partilhada e teletrabalho" },
-  { plan: "Muige · 10 Mbps", detail: "Vários dispositivos e streaming HD" },
-];
+/** Os 3 primeiros planos, com a velocidade vinda dos dados (assim acompanha mudanças de preço/velocidade). */
+const speedDetails: Record<string, string> = {
+  ukamba: "Uso individual, redes sociais e navegação",
+  omunga: "Casa partilhada e teletrabalho",
+  muige: "Vários dispositivos e streaming HD",
+};
+const speedItems = internetPlans
+  .filter((p) => p.id in speedDetails)
+  .map((p) => ({ plan: `${p.name.replace(/^Plano\s+/, "")} · ${p.download} Mbps`, detail: speedDetails[p.id] }));
 
 /** Passos da animação (intervalo de STEP_MS): chips → destaque do plano → cartão. */
 const STEP_MS = 420;
@@ -36,7 +41,7 @@ type Icon = ComponentType<SVGProps<SVGSVGElement>>;
 
 function Pill({ icon: Icon, children, as: Tag = "p" }: { icon: Icon; children: string; as?: "p" | "h3" }) {
   return (
-    <Tag className="relative z-10 inline-flex h-7 items-center gap-1.5 rounded-full border border-line bg-white px-3 font-mono text-[11px] font-medium tracking-wider text-ink uppercase shadow-sm">
+    <Tag className="relative z-10 inline-flex h-8 items-center gap-1.5 rounded-full border border-line bg-white px-3.5 font-display text-sm font-medium text-ink shadow-sm">
       <Icon className="size-3.5 text-brand-600" />
       {children}
     </Tag>
@@ -100,13 +105,13 @@ export function Benefits() {
           Linha de ligação (desktop): passa pelo 1.º selo, desce depois da 1.ª coluna
           e segue pelos restantes selos. Desenha-se quando a secção entra no ecrã.
         */}
-        <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 top-0 hidden h-[86px] lg:block">
+        <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 top-0 hidden h-[90px] lg:block">
           <span
-            className="absolute top-[13px] left-0 h-[37px] w-[257px] rounded-tr-[28px] border-t-2 border-r-2 border-brand-500 transition-[clip-path] duration-700 ease-out"
+            className="absolute top-[15px] left-0 h-[37px] w-[257px] rounded-tr-[28px] border-t-2 border-r-2 border-brand-500 transition-[clip-path] duration-700 ease-out"
             style={{ clipPath: inView ? "inset(0 0 0 0)" : "inset(0 100% 0 0)" }}
           />
           <span
-            className="absolute top-[48px] right-0 left-[255px] h-[37px] rounded-bl-[28px] border-b-2 border-l-2 border-brand-500 transition-[clip-path] delay-500 duration-1000 ease-out"
+            className="absolute top-[51px] right-0 left-[255px] h-[37px] rounded-bl-[28px] border-b-2 border-l-2 border-brand-500 transition-[clip-path] delay-500 duration-1000 ease-out"
             style={{ clipPath: inView ? "inset(0 0 0 0)" : "inset(0 100% 0 0)" }}
           />
         </div>
@@ -142,7 +147,7 @@ export function Benefits() {
               return (
                 <li
                   key={item}
-                  className={`inline-flex items-center gap-2 rounded-full border px-3 py-1 font-mono text-[11px] tracking-wider uppercase transition-colors duration-300 ${
+                  className={`inline-flex items-center gap-2 rounded-full border px-3 py-1.5 font-display text-sm transition-colors duration-300 ${
                     done ? "border-brand-200 bg-brand-50 text-ink" : "border-line text-muted/70"
                   }`}
                 >
@@ -171,7 +176,7 @@ export function Benefits() {
               return (
                 <li
                   key={item.plan}
-                  className={`flex gap-2.5 font-mono text-[12px] leading-relaxed tracking-wide uppercase transition-colors duration-300 ${
+                  className={`flex gap-2.5 font-display text-sm leading-relaxed transition-colors duration-300 ${
                     on ? "text-ink" : "text-muted/70"
                   }`}
                 >

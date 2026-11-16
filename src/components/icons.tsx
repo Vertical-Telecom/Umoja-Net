@@ -91,6 +91,47 @@ export const Handshake = (p: IconProps) => (
   </Base>
 );
 
+export const Wifi = (p: IconProps) => (
+  <Base {...p}>
+    <path d="M12 20h.01" />
+    <path d="M2 8.82a15 15 0 0 1 20 0" />
+    <path d="M5 12.86a10 10 0 0 1 14 0" />
+    <path d="M8.5 16.43a5 5 0 0 1 7 0" />
+  </Base>
+);
+
+/** Ecrã com "HD" (combos de internet e TV). */
+export const TvHd = (p: IconProps) => (
+  <Base {...p}>
+    <rect x="2" y="5" width="20" height="14" rx="2" />
+    <path d="M7 9v6M11 9v6M7 12h4" />
+    <path d="M14 9v6h1.5a3 3 0 0 0 0-6Z" />
+  </Base>
+);
+
+export const Wallet = (p: IconProps) => (
+  <Base {...p}>
+    <path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1" />
+    <path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4" />
+  </Base>
+);
+
+export const Cast = (p: IconProps) => (
+  <Base {...p}>
+    <path d="M2 8V6a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2h-6" />
+    <path d="M2 12a9 9 0 0 1 8 8" />
+    <path d="M2 16a5 5 0 0 1 4 4" />
+    <path d="M2 20h.01" />
+  </Base>
+);
+
+export const Gauge = (p: IconProps) => (
+  <Base {...p}>
+    <path d="m12 14 4-4" />
+    <path d="M3.34 19a10 10 0 1 1 17.32 0" />
+  </Base>
+);
+
 export const Users = (p: IconProps) => (
   <Base {...p}>
     <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
