@@ -70,7 +70,7 @@ export const internetPlans: Plan[] = [
     tagline: "Força e resiliência para enfrentar os desafios do dia a dia.",
     download: 30,
     upload: 15,
-    price: "Consultar preço",
+    price: "35.999 Kz",
     idealFor: [
       "Famílias numerosas",
       "Streaming em 4K",
@@ -84,7 +84,7 @@ export const internetPlans: Plan[] = [
     tagline: "Velocidade e estabilidade para impulsionar o seu sucesso.",
     download: 50,
     upload: 20,
-    price: "Consultar preço",
+    price: "43.999 Kz",
     idealFor: [
       "Muitos dispositivos ao mesmo tempo",
       "Downloads pesados",
@@ -106,7 +106,7 @@ export type TvPackage = {
 };
 
 export const tvPackages: TvPackage[] = [
-  { id: "ukumba", name: "Pacote DSTV Grande +", speed: 8, price: "33.000.00 Kz" },
-  { id: "umunga", name: "Pacote DSTV Bué", speed: 10, price: "41.800.00 Kz", featured: true },
-  { id: "muige", name: "Pacote DSTV Bué", speed: 20, price: "50.999.00 Kz" },
+  { id: "ukumba", name: "Pacote DSTV Grande +", speed: 8, price: "33.000 Kz" },
+  { id: "umunga", name: "Pacote DSTV Bué", speed: 10, price: "41.800 Kz", featured: true },
+  { id: "muige", name: "Pacote DSTV Bué", speed: 20, price: "50.999 Kz" },
 ];
