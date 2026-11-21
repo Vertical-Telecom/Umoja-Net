@@ -49,7 +49,7 @@ export function UmojaMeaning() {
       aria-labelledby="significado"
       className="bg-surface px-5 py-20 sm:px-8 lg:px-12 lg:pt-[122px] lg:pb-[129px] xl:px-[76px]"
     >
-      <div className="mx-auto max-w-[1288px]">
+      <div className="mx-auto">
         <div className="mx-auto flex max-w-[864px] flex-col items-center gap-3.5 text-center">
           <h2
             id="significado"

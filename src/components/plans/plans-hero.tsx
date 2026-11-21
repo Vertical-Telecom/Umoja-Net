@@ -23,9 +23,9 @@ export function PlansHero() {
         style={{ background: "linear-gradient(to bottom, transparent 34%, rgb(0 0 0 / 0.74) 66%)" }}
       />
 
-      <div className="relative mx-auto mt-auto flex w-full max-w-[1440px] flex-col items-center px-5 text-center sm:px-8 lg:px-12 xl:px-[76px]">
+      <div className="relative mx-auto mt-auto flex w-full flex-col items-center px-5 text-center sm:px-8 lg:px-12 xl:px-[76px]">
         <h1 className="max-w-[720px] font-display text-[40px] leading-[48px] font-semibold tracking-[-1.5px] sm:text-[48px] sm:leading-[57px] lg:text-[56px] lg:leading-[66px] lg:tracking-[-2px]">
-          <span className="text-accent-400">Entretenimento</span> e <span className="text-accent-400">velocidade</span>{" "}
+          <span className="text-gradient-accent">Entretenimento</span> e <span className="text-gradient-accent">velocidade</span>{" "}
           no mesmo pacote
         </h1>
         <p className="mt-4 max-w-[600px] font-display text-lg leading-[26px] font-normal lg:text-[22px] lg:leading-[30px]">

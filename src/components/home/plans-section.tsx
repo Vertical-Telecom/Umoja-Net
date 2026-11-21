@@ -113,7 +113,7 @@ export function PlansSection() {
   const tab = tabs[active];
 
   return (
-    <section id="planos" aria-labelledby="planos-titulo" className="mx-auto max-w-6xl px-5 pt-24 pb-24 sm:px-8 sm:pt-28">
+    <section id="planos" aria-labelledby="planos-titulo" className="mx-auto w-full px-5 sm:px-8 lg:px-12 xl:px-[76px] pt-24 pb-24 sm:pt-28">
       <div className="text-center">
         <h2 id="planos-titulo" className="text-3xl font-semibold tracking-tight text-balance sm:text-4xl">
           Escolha o <span className="text-brand-500">plano perfeito</span> para o seu dia.

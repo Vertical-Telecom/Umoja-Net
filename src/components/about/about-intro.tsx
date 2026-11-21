@@ -11,9 +11,9 @@ export function AboutIntro() {
     */
     <section
       aria-labelledby="quem-somos"
-      className="mx-auto max-w-360 px-5 py-20 sm:px-8 sm:py-24 lg:px-12 lg:pt-20.5 xl:px-19"
+      className="mx-auto px-5 py-20 sm:px-8 sm:py-24 lg:px-12 lg:pt-20.5 xl:px-19"
     >
-      <div className="grid items-center gap-12 lg:grid-cols-[minmax(0,715px)_minmax(0,438px)] lg:gap-12 xl:gap-27.25">
+      <div className="grid items-center gap-12 lg:grid-cols-[minmax(0,715px)_minmax(0,438px)] lg:justify-between lg:gap-12 xl:gap-27.25">
         <div>
           <h2
             id="quem-somos"

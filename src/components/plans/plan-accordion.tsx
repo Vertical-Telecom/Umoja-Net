@@ -112,7 +112,7 @@ export function PlanAccordion() {
                 >
                   Plano
                   <br />
-                  <span className="text-accent-400">{short}</span>
+                  <span className="text-gradient-accent">{short}</span>
                 </span>
               </button>
 

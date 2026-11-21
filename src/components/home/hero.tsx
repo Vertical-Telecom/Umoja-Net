@@ -270,7 +270,7 @@ export function Hero() {
               )}
 
               {/* Frame do design (1440 de largura): margens de 76px. Acima de 1440px fica centrado. */}
-              <div className="relative mx-auto flex w-full max-w-[1440px] flex-col px-5 sm:px-8 lg:px-12 xl:px-[76px]">
+              <div className="relative mx-auto flex w-full flex-col px-5 sm:px-8 lg:px-12 xl:px-[76px]">
                 <SlideContent slide={slide} heading={i === 0 ? "h1" : "h2"} />
               </div>
             </div>

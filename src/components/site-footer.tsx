@@ -13,7 +13,7 @@ export function SiteFooter() {
 
   return (
     <footer className="bg-brand-950 text-white">
-      <div className="mx-auto max-w-6xl px-5 pt-16 sm:px-8 sm:pt-20">
+      <div className="mx-auto w-full px-5 sm:px-8 lg:px-12 xl:px-[76px] pt-16 sm:pt-20">
         <section
           id="contacto"
           aria-labelledby="cta-titulo"

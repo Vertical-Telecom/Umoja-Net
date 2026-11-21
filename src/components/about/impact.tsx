@@ -31,7 +31,7 @@ function Chip({
 /** "Tecnologia com impacto real": cartão com imagem, antes do rodapé. */
 export function Impact() {
   return (
-    <section aria-labelledby="impacto" className="mx-auto max-w-[1336px] px-5 pb-20 sm:px-8 sm:pb-28">
+    <section aria-labelledby="impacto" className="mx-auto w-full px-5 sm:px-8 lg:px-12 xl:px-[76px] pb-20 sm:pb-28">
       <div className="relative isolate flex min-h-[520px] flex-col overflow-hidden rounded-[32px] bg-brand-950 px-6 pt-12 pb-6 text-white sm:px-10 sm:pt-16 md:aspect-[1288/818] md:min-h-0">
         <Image
           src={impactImage}

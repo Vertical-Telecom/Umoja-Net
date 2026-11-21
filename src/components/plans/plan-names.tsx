@@ -10,7 +10,7 @@ export function PlanNames() {
   return (
     <section
       aria-labelledby="dialetos"
-      className="mx-auto max-w-[1440px] px-5 py-20 sm:px-8 sm:py-24 lg:px-12 xl:px-[76px]"
+      className="mx-auto px-5 py-20 sm:px-8 sm:py-24 lg:px-12 xl:px-[76px]"
     >
       <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,1fr)_576px] lg:gap-16">
         <div>

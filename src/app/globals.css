@@ -90,6 +90,25 @@
   --animate-fade-up: fade-up 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
   --animate-float: float 6s ease-in-out infinite;
   --animate-blink: blink 1s step-end infinite;
+  /* Mural: as colunas sobem como uma escada rolante (a duração é definida por coluna). */
+  --animate-mural-up: mural-up 30s linear infinite;
+  /* Benefícios: brilho que dá a volta ao anel em órbita da pílula. */
+  --animate-orbit: orbit 4s linear infinite;
+
+  @keyframes orbit {
+    to {
+      stroke-dashoffset: -100;
+    }
+  }
+
+  @keyframes mural-up {
+    from {
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(-50%);
+    }
+  }
 
   @keyframes float {
     0%,

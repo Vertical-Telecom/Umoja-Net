@@ -22,7 +22,7 @@ export function RightChoice() {
       />
       {/* Imagem sem escurecimento nem desfoque, como no design. */}
 
-      <div className="relative mx-auto flex w-full max-w-[1440px] flex-col justify-center px-5 py-20 sm:px-8 lg:px-12 xl:px-[76px]">
+      <div className="relative mx-auto flex w-full flex-col justify-center px-5 py-20 sm:px-8 lg:px-12 xl:px-[76px]">
         <h2
           id="escolha-certa"
           className="max-w-[660px] font-display text-[28px] leading-9 font-semibold sm:text-[36px] sm:leading-[46px]"

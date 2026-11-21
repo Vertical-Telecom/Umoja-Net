@@ -38,11 +38,11 @@ export function AboutHero() {
         className="absolute inset-0 -z-10 bg-linear-to-t from-[#04020d]/90 via-[#04020d]/50 via-55% to-transparent lg:hidden"
       />
 
-      <div className="relative mx-auto flex w-full max-w-360 flex-col px-5 sm:px-8 lg:px-12 xl:px-19">
+      <div className="relative mx-auto flex w-full flex-col px-5 sm:px-8 lg:px-12 xl:px-19">
         <div className="mt-auto flex flex-col gap-6 sm:gap-8 lg:flex-row lg:items-start lg:justify-between lg:gap-12 lg:pb-[clamp(72px,15svh,122px)]">
           <h1 className="font-display text-[40px] leading-12 font-semibold tracking-[-1.5px] sm:text-[48px] sm:leading-14.25 lg:max-w-124 lg:text-[56px] lg:leading-16.5 lg:tracking-[-2px]">
-            Ligados pela <span className="text-accent-400">conexão</span>, movidos pela{" "}
-            <span className="text-accent-400">unidade</span>.
+            Ligados pela <span className="text-gradient-accent">conexão</span>, movidos pela{" "}
+            <span className="text-gradient-accent">unidade</span>.
           </h1>
           <div className="flex flex-col items-start gap-6 lg:max-w-110.25 lg:pt-1.5">
             <p className="font-display text-lg leading-6.5 font-normal text-white lg:text-[24px] lg:leading-7.5">

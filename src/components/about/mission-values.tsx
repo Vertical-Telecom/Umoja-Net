@@ -35,7 +35,7 @@ function Card({
 
 export function MissionValues() {
   return (
-    <section aria-label="Missão, visão e valores" className="mx-auto max-w-6xl px-5 py-20 sm:px-8 sm:py-28">
+    <section aria-label="Missão, visão e valores" className="mx-auto w-full px-5 sm:px-8 lg:px-12 xl:px-[76px] py-20 sm:py-28">
       <div className="grid gap-6 md:grid-cols-2">
         <Card icon={Gem} title="A nossa missão" titleId="missao">
           <p className="mt-3 text-base leading-relaxed text-muted">
