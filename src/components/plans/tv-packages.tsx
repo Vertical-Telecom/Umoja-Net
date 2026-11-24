@@ -32,7 +32,7 @@ export function TvPackages() {
             <li
               key={pkg.id}
               className={`flex w-[85%] shrink-0 snap-start flex-col rounded-3xl border bg-white transition-shadow duration-300 sm:w-[calc((100%-1.25rem)/2)] lg:w-[calc((100%-2.5rem)/3)] ${
-                pkg.featured ? "border-brand-200 shadow-xl shadow-brand-500/10" : "border-line hover:shadow-lg hover:shadow-brand-500/5"
+                pkg.featured ? "border-brand-950 shadow-xl shadow-brand-950/10" : "border-line hover:shadow-lg hover:shadow-brand-950/5"
               }`}
             >
               <div className="p-6 sm:p-8">
@@ -53,8 +53,8 @@ export function TvPackages() {
                   aria-label={`Contratar ${pkg.name} de ${pkg.speed} Mbps por ${pkg.price}`}
                   className={`group mt-8 inline-flex min-h-14 w-full items-center justify-center gap-2 rounded-full border font-display text-base font-semibold transition-all duration-200 ${
                     pkg.featured
-                      ? "border-brand-500 bg-brand-500 text-white hover:bg-brand-600"
-                      : "border-brand-200 text-foundation-purple-900 hover:border-brand-500 hover:bg-brand-500 hover:text-white"
+                      ? "border-brand-950 bg-brand-950 text-white hover:bg-brand-900"
+                      : "border-brand-950 text-foundation-purple-900 hover:border-brand-950 hover:bg-brand-950 hover:text-white"
                   }`}
                 >
                   {pkg.price}
@@ -67,7 +67,7 @@ export function TvPackages() {
                 <ul className="mt-6 space-y-4">
                   {benefits.map((b) => (
                     <li key={b} className="flex items-center gap-3 text-[15px] text-muted">
-                      <span className="grid size-5 shrink-0 place-items-center rounded-full bg-brand-500 text-white">
+                      <span className="grid size-5 shrink-0 place-items-center rounded-full bg-brand-950 text-white">
                         <Check className="size-3" />
                       </span>
                       {b}

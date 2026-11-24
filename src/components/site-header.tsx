@@ -63,7 +63,7 @@ export function SiteHeader() {
           </Link>
         ))}
         <Link href="/" aria-label="Umoja Net — Início" className="relative mx-3 h-9 w-22 shrink-0 rounded-full">
-          <LogoMark className="absolute top-1/2 left-0 block max-w-none -translate-y-1/2 drop-shadow-[0_4px_16px_rgba(117,86,255,0.55)]" />
+          <LogoMark className="absolute top-1/2 left-0 block max-w-none -translate-y-1/2 drop-shadow-[0_4px_16px_rgba(23,7,51,0.55)]" />
         </Link>
         {right.map((l) => (
           <Link

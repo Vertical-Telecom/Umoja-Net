@@ -53,11 +53,11 @@ export function Impact() {
         <div className="mx-auto max-w-2xl text-center">
           <h2
             id="impacto"
-            className="font-display text-[28px] leading-[36px] font-semibold tracking-[-0.5px] sm:text-[36px] sm:leading-[44px]"
+            className="type-h2"
           >
             Tecnologia com impacto real
           </h2>
-          <p className="mt-4 text-base leading-relaxed text-white/90 sm:text-lg">
+          <p className="mt-4 type-body text-white/90">
             Acreditamos na inclusão digital como uma ferramenta de transformação. Cada bairro que conectamos é uma nova
             oportunidade de acesso ao conhecimento, ao trabalho, ao entretenimento e ao crescimento económico.
           </p>

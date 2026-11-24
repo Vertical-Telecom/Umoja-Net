@@ -133,14 +133,14 @@ export function PlanAccordion() {
                     <br />
                     {short} significa
                     <br />
-                    <span className="text-brand-500">{d.meaning}</span>
+                    <span className="text-gradient-accent">{d.meaning}</span>
                   </h3>
                   <p className="mt-4 max-w-[380px] font-display text-base leading-[26px] text-foundation-blue-200 sm:text-lg sm:leading-[28px]">
                     {d.text}
                   </p>
                   <a
                     href={site.hireHref}
-                    className="group mt-8 inline-flex h-12 items-center gap-2 self-start rounded-full bg-brand-500 px-6 font-display text-sm font-semibold text-white transition-colors duration-200 hover:bg-brand-600"
+                    className="group mt-8 inline-flex h-12 items-center gap-2 self-start rounded-full bg-brand-950 px-6 font-display text-sm font-semibold text-white transition-colors duration-200 hover:bg-brand-900"
                   >
                     Adquirir plano
                     <ArrowRight className="size-5 transition-transform duration-200 group-hover:translate-x-0.5" />

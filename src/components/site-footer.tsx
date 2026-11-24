@@ -6,7 +6,7 @@ import { navLinks, site, socialLinks } from "@/lib/site";
 import { socialIcons } from "./icons";
 import { Logo } from "./logo";
 
-/** Faixa "Fale connosco" + rodapé com redes sociais. Os links seguem o estilo do menu do topo. */
+/** Rodapé com logo, links e redes sociais. Os links seguem o estilo do menu do topo. */
 export function SiteFooter() {
   const pathname = usePathname();
   const isActive = (href: string) => !href.includes("#") && href === pathname;
@@ -14,27 +14,7 @@ export function SiteFooter() {
   return (
     <footer className="bg-brand-950 text-white">
       <div className="mx-auto w-full px-5 sm:px-8 lg:px-12 xl:px-[76px] pt-16 sm:pt-20">
-        <section
-          id="contacto"
-          aria-labelledby="cta-titulo"
-          className="mx-auto flex max-w-4xl flex-col items-center gap-6 rounded-3xl bg-white px-6 py-12 text-center shadow-2xl shadow-brand-500/20 sm:py-14"
-        >
-          <h2
-            id="cta-titulo"
-            className="max-w-[406px] font-display text-[26px] leading-[30px] font-semibold tracking-normal text-foundation-purple-900 sm:text-[28px] sm:leading-[28px]"
-          >
-            Quer saber mais sobre o <br className="hidden sm:block" />
-            nosso trabalho?
-          </h2>
-          <a
-            href={site.contactHref}
-            className="inline-flex h-14 cursor-pointer items-center justify-center rounded-[60px] bg-brand-500 px-6 py-4 font-display text-base leading-6 font-semibold text-white transition-colors duration-200 hover:bg-brand-600"
-          >
-            Fale connosco
-          </a>
-        </section>
-
-        <div className="mt-14 flex flex-col items-center gap-8 md:flex-row md:justify-between">
+        <div className="flex flex-col items-center gap-8 md:flex-row md:justify-between">
           <Link href="/" className="rounded-full" aria-label="Umoja Net — Início">
             <Logo />
           </Link>

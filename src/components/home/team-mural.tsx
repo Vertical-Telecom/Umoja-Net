@@ -73,17 +73,23 @@ export function TeamMural() {
   const current = open !== null ? photos[open] : null;
 
   return (
-    <section aria-labelledby="mural-titulo" className="relative overflow-hidden">
+    <section aria-labelledby="mural-titulo" className="relative overflow-hidden bg-brand-950">
+      {/* Continuidade com o logo da secção de cima: o topo começa exatamente na cor do logo na linha de corte
+          (tokens logo-cut-md/lg em globals.css) e escurece até ao fundo. Sem logo no telemóvel. */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-x-0 top-0 h-32 bg-linear-to-b from-logo-cut-md to-transparent max-md:hidden lg:from-logo-cut-lg"
+      />
       <div className="mx-auto grid max-w-[1440px] items-center gap-6 px-5 py-20 sm:px-8 sm:py-24 lg:grid-cols-[minmax(0,420px)_minmax(0,1fr)] lg:gap-10 lg:px-12 xl:px-[76px]">
         {/* Texto, alinhado ao centro do mural */}
         <div className="relative z-10">
           <h2
             id="mural-titulo"
-            className="font-display text-[28px] leading-9 font-semibold text-foundation-blue-600 sm:text-[40px] sm:leading-[50px]"
+            className="type-h2 text-white"
           >
-            Quem faz a sua <span className="text-brand-500">internet</span> acontecer
+            Quem faz a sua <span className="text-gradient-accent">internet</span> acontecer
           </h2>
-          <p className="mt-4 max-w-[400px] text-base leading-relaxed text-muted sm:text-lg">
+          <p className="mt-4 max-w-[400px] type-body text-white/80">
             Por trás de cada ligação há uma equipa no terreno: nas torres, nas instalações e no apoio a cada cliente.
           </p>
         </div>

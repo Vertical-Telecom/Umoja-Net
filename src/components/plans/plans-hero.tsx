@@ -24,11 +24,11 @@ export function PlansHero() {
       />
 
       <div className="relative mx-auto mt-auto flex w-full flex-col items-center px-5 text-center sm:px-8 lg:px-12 xl:px-[76px]">
-        <h1 className="max-w-[720px] font-display text-[40px] leading-[48px] font-semibold tracking-[-1.5px] sm:text-[48px] sm:leading-[57px] lg:text-[56px] lg:leading-[66px] lg:tracking-[-2px]">
+        <h1 className="max-w-[720px] type-display">
           <span className="text-gradient-accent">Entretenimento</span> e <span className="text-gradient-accent">velocidade</span>{" "}
           no mesmo pacote
         </h1>
-        <p className="mt-4 max-w-[600px] font-display text-lg leading-[26px] font-normal lg:text-[22px] lg:leading-[30px]">
+        <p className="mt-4 max-w-[600px] type-lead">
           Tenha internet rápida, estável e pacotes completos com DSTV Stream para toda a família.
         </p>
 

@@ -1,7 +1,5 @@
 import type { Metadata } from "next";
 import { DM_Sans, Outfit } from "next/font/google";
-import { SiteHeader } from "@/components/site-header";
-import { SiteFooter } from "@/components/site-footer";
 import "./globals.css";
 
 const outfit = Outfit({
@@ -26,19 +24,12 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="pt-AO" className={`${outfit.variable} ${dmSans.variable}`}>
-      <body className="flex min-h-svh flex-col">
-        <a
-          href="#conteudo"
-          className="sr-only z-[60] rounded-full bg-white px-4 py-2 text-sm font-medium text-ink focus:not-sr-only focus:fixed focus:left-4 focus:top-4"
-        >
-          Saltar para o conteúdo
-        </a>
-        <SiteHeader />
-        <main id="conteudo" className="flex-1">
-          {children}
-        </main>
-        <SiteFooter />
-      </body>
+      <head>
+        {/* Preload da fonte usada nos títulos acima do scroll — evita FOUT no hero. */}
+        <link rel="preload" href="/fonts/Campton-SemiBold.woff2" as="font" type="font/woff2" crossOrigin="" />
+      </head>
+      {/* O menu e o rodapé estão em (site)/layout.tsx; a página /speedtest fica sem eles. */}
+      <body className="flex min-h-svh flex-col">{children}</body>
     </html>
   );
 }

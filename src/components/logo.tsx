@@ -1,6 +1,7 @@
 import Image from "next/image";
 import logoMark from "../../public/img/homepage/home/logo.svg";
 import logoHorizontal from "../../public/img/homepage/home/Logo Horizontal.svg";
+import logoHorizontalRoxo from "../../public/img/homepage/home/logo-horizontal-roxo.svg";
 
 /**
  * Emblema circular oficial (centro do menu em desktop). Decorativo: o link à volta tem o nome acessível.
@@ -11,13 +12,21 @@ export function LogoMark({ className }: { className?: string }) {
 }
 
 /**
- * Logótipo horizontal branco (menu em telemóvel e rodapé — fundos escuros).
- * No menu do topo usar `loading="eager"`; no rodapé fica `lazy` (por defeito).
+ * Logótipo horizontal: branco por defeito (menu em telemóvel e rodapé — fundos escuros) ou roxo
+ * `#170733` (`variant="roxo"`, para fundos claros). No menu do topo usar `loading="eager"`.
  */
-export function Logo({ className, loading }: { className?: string; loading?: "eager" | "lazy" }) {
+export function Logo({
+  className,
+  loading,
+  variant = "branco",
+}: {
+  className?: string;
+  loading?: "eager" | "lazy";
+  variant?: "branco" | "roxo";
+}) {
   return (
     <Image
-      src={logoHorizontal}
+      src={variant === "roxo" ? logoHorizontalRoxo : logoHorizontal}
       alt=""
       unoptimized
       loading={loading}

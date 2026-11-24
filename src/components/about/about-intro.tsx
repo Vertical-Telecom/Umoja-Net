@@ -17,14 +17,14 @@ export function AboutIntro() {
         <div>
           <h2
             id="quem-somos"
-            className="max-w-155.5 font-display text-[28px] leading-9 font-semibold tracking-normal text-foundation-blue-600 sm:text-[36px] sm:leading-11.5"
+            className="max-w-155.5 type-h2 text-foundation-blue-600"
           >
             Somos mais do que um provedor de internet.{" "}
-            <span className="text-brand-500">
+            <span className="text-gradient-accent">
               Somos <Typewriter words={["conexão", "presença.", "unidade."]} />
             </span>
           </h2>
-          <div className="mt-8 flex max-w-178.75 flex-col gap-7.5 font-display text-base leading-7 font-normal text-muted sm:text-[18px] sm:leading-7.5">
+          <div className="mt-8 flex max-w-178.75 flex-col gap-7.5 type-body text-muted">
             <p>
               A Umoja Net surgiu com um propósito simples e profundo: <br className="hidden lg:block" />
               <strong className="font-semibold text-ink">

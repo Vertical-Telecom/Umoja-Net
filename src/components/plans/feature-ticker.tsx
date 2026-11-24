@@ -78,7 +78,7 @@ function Group({ items }: { items: Feature[] }) {
     <ul className="grid w-full shrink-0 gap-3 px-1 text-left sm:grid-cols-3 sm:gap-6">
       {items.map(({ icon: Icon, text }, i) => (
         <li key={i} className="flex items-center gap-3 rounded-2xl border border-white/20 bg-white/10 p-3 backdrop-blur-md">
-          <span className="grid size-11 shrink-0 place-items-center rounded-xl bg-white/90 text-brand-600">
+          <span className="grid size-11 shrink-0 place-items-center rounded-xl bg-white/90 text-brand-950">
             <Icon className="size-5" />
           </span>
           <p className="text-sm leading-snug">{text}</p>

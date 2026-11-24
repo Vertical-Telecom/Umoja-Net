@@ -62,8 +62,8 @@ export function CarouselArrows({
     "grid size-11 cursor-pointer place-items-center rounded-full border transition-all duration-200 disabled:cursor-not-allowed disabled:opacity-40";
   const styles =
     tone === "light"
-      ? "border-line bg-white text-ink hover:border-brand-300 hover:text-brand-600 enabled:shadow-md enabled:shadow-brand-500/10"
-      : "border-white/30 bg-white/10 text-white backdrop-blur hover:bg-white hover:text-brand-700";
+      ? "border-line bg-white text-ink hover:border-brand-950 hover:text-brand-950 enabled:shadow-md enabled:shadow-brand-950/10"
+      : "border-white/30 bg-white/10 text-white backdrop-blur hover:bg-white hover:text-brand-950";
 
   return (
     <div className="flex justify-end gap-3" role="group" aria-label={label}>

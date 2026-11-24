@@ -16,12 +16,12 @@ export function PlanNames() {
         <div>
           <h2
             id="dialetos"
-            className="max-w-[520px] font-display text-[28px] leading-9 font-semibold text-foundation-blue-600 sm:text-[36px] sm:leading-[46px]"
+            className="max-w-[520px] type-h2 text-foundation-blue-600"
           >
             Por que os nossos planos têm nomes em{" "}
-            <span className="text-brand-500">dialetos africanos?</span>
+            <span className="text-gradient-accent">dialetos africanos?</span>
           </h2>
-          <div className="mt-8 flex max-w-[600px] flex-col gap-[30px] font-display text-base leading-[28px] text-muted sm:text-[18px] sm:leading-[30px]">
+          <div className="mt-8 flex max-w-[600px] flex-col gap-[30px] type-body text-muted">
             <p>
               Na Umoja Net, acreditamos que a tecnologia deve caminhar lado a
               lado com a nossa identidade. Por isso, cada um dos nossos planos

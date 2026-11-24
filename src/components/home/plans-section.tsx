@@ -17,10 +17,10 @@ function PlanCard({ plan }: { plan: Plan }) {
     <article
       aria-labelledby={`plano-${plan.id}`}
       className={`flex w-[85%] shrink-0 snap-start flex-col rounded-3xl border bg-white p-6 transition-shadow duration-300 sm:w-[calc((100%-1.25rem)/2)] sm:p-7 lg:w-[calc((100%-2.5rem)/3)] ${
-        plan.featured ? "border-brand-200 shadow-xl shadow-brand-500/10" : "border-line hover:shadow-lg hover:shadow-brand-500/5"
+        plan.featured ? "border-brand-950 shadow-xl shadow-brand-950/10" : "border-line hover:shadow-lg hover:shadow-brand-950/5"
       }`}
     >
-      <h3 id={`plano-${plan.id}`} className="text-lg font-semibold">
+      <h3 id={`plano-${plan.id}`} className="type-h3 text-foundation-purple-900">
         {plan.name}
       </h3>
       <p className="mt-1 min-h-10 max-w-60 text-sm leading-snug text-muted">{plan.tagline}</p>
@@ -53,8 +53,8 @@ function PlanCard({ plan }: { plan: Plan }) {
         aria-label={/\d/.test(plan.price) ? `Contratar ${plan.name} por ${plan.price}` : `${plan.price}: ${plan.name}`}
         className={`group mt-6 inline-flex min-h-12 items-center justify-center gap-2 rounded-full border text-sm font-semibold transition-all duration-200 ${
           plan.featured
-            ? "border-brand-600 bg-brand-600 text-white hover:bg-brand-700"
-            : "border-line text-ink hover:border-brand-600 hover:bg-brand-600 hover:text-white"
+            ? "border-brand-950 bg-brand-950 text-white hover:bg-brand-900"
+            : "border-line text-ink hover:border-brand-950 hover:bg-brand-950 hover:text-white"
         }`}
       >
         {plan.price}
@@ -65,7 +65,7 @@ function PlanCard({ plan }: { plan: Plan }) {
       <ul className="mt-4 space-y-3">
         {plan.idealFor.map((item) => (
           <li key={item} className="flex items-center gap-3 text-sm text-muted">
-            <span className="grid size-5 shrink-0 place-items-center rounded-full bg-brand-600 text-white">
+            <span className="grid size-5 shrink-0 place-items-center rounded-full bg-brand-950 text-white">
               <Check className="size-3" />
             </span>
             {item}
@@ -115,10 +115,10 @@ export function PlansSection() {
   return (
     <section id="planos" aria-labelledby="planos-titulo" className="mx-auto w-full px-5 sm:px-8 lg:px-12 xl:px-[76px] pt-24 pb-24 sm:pt-28">
       <div className="text-center">
-        <h2 id="planos-titulo" className="text-3xl font-semibold tracking-tight text-balance sm:text-4xl">
-          Escolha o <span className="text-brand-500">plano perfeito</span> para o seu dia.
+        <h2 id="planos-titulo" className="type-h2 text-balance text-foundation-blue-600">
+          Escolha o <span className="text-gradient-accent">plano perfeito</span> para o seu dia.
         </h2>
-        <p className="mx-auto mt-3 max-w-md text-sm text-muted">
+        <p className="mx-auto mt-4 max-w-xl type-subtitle text-foundation-blue-200">
           Velocidades reais para diferentes necessidades da navegação básica ao streaming pesado.
         </p>
 

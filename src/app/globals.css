@@ -49,6 +49,9 @@
     url("/fonts/Campton-Bold.otf") format("opentype");
 }
 
+/* Ecrãs baixos (ex.: portáteis 1366×768, ~657 px úteis): a página do teste de velocidade cabe sem scroll. */
+@custom-variant short (@media (max-height: 760px));
+
 @theme {
   --color-brand-50: #f4f1ff;
   --color-brand-100: #eae4ff;
@@ -61,6 +64,11 @@
   --color-brand-800: #3a1d9c;
   --color-brand-900: #261050;
   --color-brand-950: #170733;
+
+  /* Cor do logo da Umoja (a 90%, sobre branco) na linha onde a secção Novidade o corta; o Mural começa nela.
+     Tablet: corte a 50% da altura do logo. Desktop: a 70%. Ver express-news.tsx e team-mural.tsx. */
+  --color-logo-cut-md: #371e58;
+  --color-logo-cut-lg: #3c205e;
 
   --color-ink: #1e1b3a;
   /* Foundation/Blue/blue-600 (texto dos botões claros), do Figma. */
@@ -149,6 +157,94 @@
   color: transparent;
 }
 
+/*
+ * Tipografia do site (padrão da página "Sobre nós" e do header, tirado do Figma).
+ * Fonte: Campton (font-display). sm = 640px, lg = 1024px.
+ *  type-display  títulos dos heróis        40/48 → 48/57 → 56/66, 600, -2px
+ *  type-h2       títulos de secção         28/36 → 36/46, 600
+ *  type-subtitle subtítulo centrado        18/28 → 22/30, 400
+ *  type-lead     texto dos heróis          18/26 → 24/30, 400
+ *  type-body     parágrafos                16/28 → 18/30, 400
+ *  type-h3       títulos de cartões        18/28, 600
+ *  type-button   botões                    16/24, 600
+ *  (Menu: DM Sans 400 18/18, em font-nav.)
+ */
+@utility type-display {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 40px;
+  line-height: 48px;
+  letter-spacing: -1.5px;
+  @media (width >= 40rem) {
+    font-size: 48px;
+    line-height: 57px;
+  }
+  @media (width >= 64rem) {
+    font-size: 56px;
+    line-height: 66px;
+    letter-spacing: -2px;
+  }
+}
+
+@utility type-h2 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 36px;
+  letter-spacing: 0;
+  @media (width >= 40rem) {
+    font-size: 36px;
+    line-height: 46px;
+  }
+}
+
+@utility type-subtitle {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 28px;
+  @media (width >= 40rem) {
+    font-size: 22px;
+    line-height: 30px;
+  }
+}
+
+@utility type-lead {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 26px;
+  @media (width >= 64rem) {
+    font-size: 24px;
+    line-height: 30px;
+  }
+}
+
+@utility type-body {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 28px;
+  @media (width >= 40rem) {
+    font-size: 18px;
+    line-height: 30px;
+  }
+}
+
+@utility type-h3 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 28px;
+}
+
+@utility type-button {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+}
+
 @utility scrollbar-none {
   scrollbar-width: none;
   &::-webkit-scrollbar {
@@ -171,6 +267,22 @@
 
   [id] {
     scroll-margin-top: 6rem;
+  }
+}
+
+/*
+ * Cards de Benefícios: animação de entrada via scroll-driven animation (Baseline Newly Available).
+ * Em browsers suportados, a animação CSS substitui a lógica IntersectionObserver do React,
+ * sendo mais performante (compositor thread). Browsers sem suporte continuam a usar o IO.
+ * Requer @supports para excluir browsers com suporte parcial (apenas animation-timeline).
+ */
+@media (prefers-reduced-motion: no-preference) {
+  @supports ((animation-timeline: view()) and (animation-range: entry)) {
+    .benefit-card {
+      animation: fade-up auto linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 30%;
+    }
   }
 }
 

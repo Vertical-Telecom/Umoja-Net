@@ -56,7 +56,7 @@ const reveal = (on: boolean, delay: string) =>
 function Tag({ icon: Icon, label }: { icon: Icon; label: string }) {
   return (
     <li className="inline-flex h-14 items-center gap-2.5 rounded-xl border-2 border-white bg-[#f3f2f7] px-5 font-display text-base font-semibold text-foundation-purple-900 shadow-[0_8px_24px_rgb(23_7_51/0.08)]">
-      <Icon className="size-5 text-brand-500" />
+      <Icon className="size-5 text-brand-950" />
       {label}
     </li>
   );
@@ -95,7 +95,7 @@ function LogoPill({ big }: { big: boolean }) {
             </feMerge>
           </filter>
         </defs>
-        <ellipse cx="200" cy="70" rx="185" ry="48" stroke="#7556ff" strokeOpacity="0.3" strokeWidth="1.2" />
+        <ellipse cx="200" cy="70" rx="185" ry="48" stroke="#170733" strokeOpacity="0.3" strokeWidth="1.2" />
         <ellipse
           cx="200"
           cy="70"
@@ -121,7 +121,7 @@ function LogoPill({ big }: { big: boolean }) {
             cx={cx}
             cy={cy}
             r={r}
-            fill="#8f74ff"
+            fill="#170733"
             className="motion-safe:animate-pulse"
             style={{ animationDelay: `${i * 0.3}s` }}
           />
@@ -162,14 +162,14 @@ function BenefitCard({
   return (
     <article
       aria-labelledby={titleId}
-      className={`relative flex min-h-[420px] flex-col overflow-hidden rounded-3xl border-2 border-white bg-[#f3f2f7] shadow-[0_8px_30px_rgb(23_7_51/0.06)] ${className}`}
+      className={`benefit-card relative flex min-h-[420px] flex-col overflow-hidden rounded-3xl border-2 border-white bg-[#f3f2f7] shadow-[0_8px_30px_rgb(23_7_51/0.06)] ${className}`}
     >
       <div className="p-6 sm:p-7">
-        <h3 id={titleId} className="flex items-center gap-2.5 font-display text-lg font-semibold text-foundation-purple-900">
-          <Icon className="size-5 text-brand-500" />
+        <h3 id={titleId} className="flex items-center gap-2.5 type-h3 text-foundation-purple-900">
+          <Icon className="size-5 text-brand-950" />
           {title}
         </h3>
-        <p className="mt-2 max-w-[340px] text-[15px] leading-relaxed text-muted">{text}</p>
+        <p className="mt-2 max-w-[340px] type-body text-muted">{text}</p>
       </div>
       <div aria-hidden="true" className="relative mt-auto h-60 overflow-hidden px-6 sm:px-7">
         {children}
@@ -194,12 +194,12 @@ export function Benefits() {
         <div className={`mx-auto max-w-3xl text-center ${reveal(inView, "delay-300")}`}>
           <h2
             id="beneficios-titulo"
-            className="font-display text-[28px] leading-9 font-semibold text-foundation-blue-600 sm:text-[44px] sm:leading-[54px]"
+            className="type-h2 text-foundation-blue-600"
           >
             Tudo o que espera de uma <span className="text-gradient-accent">boa internet</span>,{" "}
-            <span className="text-brand-500">e mais.</span>
+            <span className="text-gradient-accent">e mais.</span>
           </h2>
-          <p className="mx-auto mt-4 max-w-md text-base leading-relaxed text-muted sm:text-lg">
+          <p className="mx-auto mt-4 max-w-xl type-subtitle text-foundation-blue-200">
             Porque qualidade, velocidade e estabilidade fazem diferença no seu dia.
           </p>
         </div>
@@ -213,8 +213,8 @@ export function Benefits() {
               ))}
             </ul>
             <div aria-hidden="true" className={`flex items-center delay-700 ${line}`}>
-              <div className="h-20 w-10 rounded-r-2xl border-y-2 border-r-2 border-brand-200" />
-              <div className="h-0.5 w-16 bg-brand-200" />
+              <div className="h-20 w-10 rounded-r-2xl border-y-2 border-r-2 border-brand-950" />
+              <div className="h-0.5 w-16 bg-brand-950" />
             </div>
           </div>
           <div className="px-2">
@@ -222,8 +222,8 @@ export function Benefits() {
           </div>
           <div className="flex items-center">
             <div aria-hidden="true" className={`flex items-center delay-700 ${line}`}>
-              <div className="h-0.5 w-16 bg-brand-200" />
-              <div className="h-20 w-10 rounded-l-2xl border-y-2 border-l-2 border-brand-200" />
+              <div className="h-0.5 w-16 bg-brand-950" />
+              <div className="h-20 w-10 rounded-l-2xl border-y-2 border-l-2 border-brand-950" />
             </div>
             <ul className={`flex flex-col items-start gap-6 ${reveal(inView, "delay-[900ms]")}`}>
               {rightTags.map((t) => (
@@ -245,14 +245,14 @@ export function Benefits() {
 
         {/* Árvore de linhas da pílula até aos 3 cartões (desktop) */}
         <div aria-hidden="true" className={`hidden lg:block delay-1000 ${line}`}>
-          <div className="mx-auto h-12 w-0.5 bg-brand-200" />
-          <div className="relative mx-[16.66%] h-10 rounded-t-2xl border-x-2 border-t-2 border-brand-200">
-            <div className="absolute top-0 left-1/2 h-full w-0.5 -translate-x-1/2 bg-brand-200" />
+          <div className="mx-auto h-12 w-0.5 bg-brand-950" />
+          <div className="relative mx-[16.66%] h-10 rounded-t-2xl border-x-2 border-t-2 border-brand-950">
+            <div className="absolute top-0 left-1/2 h-full w-0.5 -translate-x-1/2 bg-brand-950" />
           </div>
         </div>
 
-        {/* 3 cartões */}
-        <div className="mt-10 grid gap-5 lg:mt-0 lg:grid-cols-3">
+        {/* 3 cartões (escondidos no telemóvel) */}
+        <div className="mt-10 grid gap-5 max-md:hidden lg:mt-0 lg:grid-cols-3">
           <BenefitCard
             className={reveal(inView, "delay-[1100ms]")}
             icon={Gauge}
@@ -268,7 +268,7 @@ export function Benefits() {
                     <span>Download</span>
                     <span className="font-semibold text-ink">{fastest.download} Mbps</span>
                   </div>
-                  <Bar value={100} color="bg-brand-500" />
+                  <Bar value={100} color="bg-brand-950" />
                 </div>
                 <div>
                   <div className="mb-1 flex justify-between">
@@ -303,9 +303,9 @@ export function Benefits() {
               <ul className="mt-3 space-y-2.5 text-[11px] text-muted">
                 {(
                   [
-                    ["Streaming HD", 85, "bg-brand-500"],
+                    ["Streaming HD", 85, "bg-brand-950"],
                     ["Videochamadas", 60, "bg-accent-500"],
-                    ["Jogos online", 45, "bg-brand-400"],
+                    ["Jogos online", 45, "bg-brand-950"],
                   ] as const
                 ).map(([label, v, c]) => (
                   <li key={label}>
@@ -320,7 +320,7 @@ export function Benefits() {
             </Panel>
             <Panel className="absolute bottom-6 left-1/2 w-[200px] -translate-x-1/2 text-center">
               <p className="text-[11px] text-muted">Dados disponíveis</p>
-              <p className="font-display text-4xl leading-tight font-semibold text-brand-600">∞</p>
+              <p className="font-display text-4xl leading-tight font-semibold text-brand-950">∞</p>
               <p className="text-[11px] font-medium text-foundation-purple-900">Sem limite de dados</p>
             </Panel>
           </BenefitCard>
@@ -335,7 +335,7 @@ export function Benefits() {
                 Atendimento rápido, claro e disponível quando você mais precisa.{" "}
                 <a
                   href={site.contactHref}
-                  className="inline-flex items-center gap-1 font-semibold text-brand-600 hover:text-brand-700"
+                  className="inline-flex items-center gap-1 font-semibold text-brand-950 hover:text-brand-950"
                 >
                   Fale connosco <ArrowRight className="size-3.5" />
                 </a>
@@ -349,7 +349,7 @@ export function Benefits() {
                   Olá! Em que podemos ajudar?
                 </p>
               </div>
-              <p className="ml-auto w-max rounded-xl rounded-tr-sm bg-brand-500 px-3 py-2 text-white">
+              <p className="ml-auto w-max rounded-xl rounded-tr-sm bg-brand-950 px-3 py-2 text-white">
                 A internet ficou lenta.
               </p>
               <div className="flex items-start gap-2">

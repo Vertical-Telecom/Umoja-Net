@@ -40,17 +40,17 @@ export function AboutHero() {
 
       <div className="relative mx-auto flex w-full flex-col px-5 sm:px-8 lg:px-12 xl:px-19">
         <div className="mt-auto flex flex-col gap-6 sm:gap-8 lg:flex-row lg:items-start lg:justify-between lg:gap-12 lg:pb-[clamp(72px,15svh,122px)]">
-          <h1 className="font-display text-[40px] leading-12 font-semibold tracking-[-1.5px] sm:text-[48px] sm:leading-14.25 lg:max-w-124 lg:text-[56px] lg:leading-16.5 lg:tracking-[-2px]">
+          <h1 className="type-display lg:max-w-124">
             Ligados pela <span className="text-gradient-accent">conexão</span>, movidos pela{" "}
             <span className="text-gradient-accent">unidade</span>.
           </h1>
           <div className="flex flex-col items-start gap-6 lg:max-w-110.25 lg:pt-1.5">
-            <p className="font-display text-lg leading-6.5 font-normal text-white lg:text-[24px] lg:leading-7.5">
+            <p className="type-lead text-white">
               Nós acreditamos na força da unidade. É por isso que conectamos pessoas, culturas e histórias.
             </p>
             <Link
               href="/planos"
-              className="group inline-flex h-14 items-center justify-center gap-2 rounded-[60px] bg-white px-6 py-4 font-display text-base leading-6 font-semibold text-foundation-blue-600 shadow-lg shadow-brand-950/30 transition-all duration-200 hover:-translate-y-0.5 hover:bg-brand-50"
+              className="group inline-flex h-14 items-center justify-center gap-2 rounded-[60px] bg-white px-6 py-4 type-button text-foundation-blue-600 shadow-lg shadow-brand-950/30 transition-all duration-200 hover:-translate-y-0.5 hover:bg-brand-50"
             >
               Ver Planos
               <ArrowRight className="size-6 transition-transform duration-200 group-hover:translate-x-0.5" />

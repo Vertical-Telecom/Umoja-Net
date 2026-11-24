@@ -106,7 +106,7 @@ export function Network() {
       <div className="mx-auto max-w-4xl text-center">
         <h2
           id="rede-titulo"
-          className="text-3xl leading-tight font-semibold tracking-tight text-balance sm:text-4xl"
+          className="type-h2 text-balance text-foundation-blue-600"
         >
           Nossa rede em expansão:
           <br />

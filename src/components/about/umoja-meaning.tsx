@@ -53,13 +53,13 @@ export function UmojaMeaning() {
         <div className="mx-auto flex max-w-[864px] flex-col items-center gap-3.5 text-center">
           <h2
             id="significado"
-            className="font-display text-[26px] leading-[34px] font-semibold tracking-normal text-foundation-blue-600 sm:text-[36px] sm:leading-[46px]"
+            className="type-h2 text-foundation-blue-600"
           >
-            Umoja significa <span className="text-brand-500">Unidade</span>
+            Umoja significa <span className="text-gradient-accent">Unidade</span>
             <br />
-            E é essa palavra que <span className="text-brand-500">guia tudo o que fazemos.</span>
+            E é essa palavra que <span className="text-gradient-accent">guia tudo o que fazemos.</span>
           </h2>
-          <p className="max-w-[761px] font-display text-lg leading-[28px] font-normal text-foundation-blue-200 sm:text-[22px] sm:leading-[30px]">
+          <p className="max-w-[761px] type-subtitle text-foundation-blue-200">
             Escolhemos um nome africano porque acreditamos na nossa identidade, na nossa cultura e no poder da união.
           </p>
         </div>
@@ -88,7 +88,7 @@ export function UmojaMeaning() {
                   onClick={() => setActive(i)}
                   onKeyDown={onKeyDown}
                   className={`min-h-[63px] cursor-pointer rounded-xl bg-white px-4 py-4 text-left font-display text-lg leading-[30px] font-medium text-foundation-purple-900 transition-all duration-200 ${
-                    on ? "shadow-lg ring-1 shadow-brand-500/10 ring-brand-300" : "hover:ring-1 hover:ring-brand-200"
+                    on ? "shadow-lg ring-1 shadow-brand-950/10 ring-brand-950" : "hover:ring-1 hover:ring-brand-950"
                   }`}
                 >
                   {item.label}
@@ -103,12 +103,12 @@ export function UmojaMeaning() {
             aria-labelledby={`unidade-tab-${active}`}
             className="flex flex-col items-start gap-6 rounded-3xl bg-white p-6 sm:flex-row sm:items-center sm:gap-[52px] sm:p-12"
           >
-            <span className="grid size-24 shrink-0 place-items-center rounded-2xl bg-brand-50 text-brand-500 sm:size-[127px]">
+            <span className="grid size-24 shrink-0 place-items-center rounded-2xl bg-brand-50 text-brand-950 sm:size-[127px]">
               <Icon className="size-14 sm:size-20" />
             </span>
             <p
               key={active}
-              className="max-w-[574px] animate-fade-up font-display text-base leading-[28px] font-normal text-foundation-purple-900 sm:text-lg sm:leading-[30px]"
+              className="max-w-[574px] animate-fade-up type-body text-foundation-purple-900"
             >
               {current.text}
             </p>

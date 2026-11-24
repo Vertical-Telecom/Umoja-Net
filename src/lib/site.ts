@@ -6,10 +6,10 @@
  */
 export const site = {
   name: "Umoja Net",
-  /** Para onde levam "Contratar Agora" e os botões de preço. */
-  hireHref: "#contacto",
-  /** Destino do botão "Fale connosco" (formulário, WhatsApp ou telefone). */
-  contactHref: "#contacto",
+  /** Para onde levam "Contratar Agora" e os botões de preço: o formulário de interesse no Início. */
+  hireHref: "/#interesse",
+  /** Destino do botão "Fale connosco": o mesmo formulário. */
+  contactHref: "/#interesse",
   copyright: "Copyright © 2025 Vertical Telecom | Todos os direitos reservados",
 } as const;
 

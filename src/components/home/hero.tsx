@@ -108,7 +108,7 @@ const DURATION = 700;
 const EASING = "cubic-bezier(0.33, 1, 0.68, 1)";
 
 const titleClass =
-  "font-display text-[40px] leading-[48px] font-semibold tracking-[-1.5px] sm:text-[48px] sm:leading-[57px] lg:text-[56px] lg:leading-[66px] lg:tracking-[-2px]";
+  "type-display";
 
 function CtaLink({ cta, variant }: { cta: Cta; variant: "solid" | "outline" | "compact" }) {
   const base =
@@ -143,7 +143,7 @@ function SlideContent({ slide, heading }: { slide: Slide; heading: "h1" | "h2" }
       */
       <div className="relative my-auto flex max-w-[738px] flex-col gap-6 sm:gap-8">
         <Heading className={titleClass}>{slide.title}</Heading>
-        <p className="max-w-[635px] font-display text-lg leading-[26px] font-normal tracking-normal lg:text-[24px] lg:leading-[30px]">
+        <p className="max-w-[635px] type-lead">
           {slide.text}
         </p>
         <div className="flex flex-wrap gap-4">
@@ -175,7 +175,7 @@ function SlideContent({ slide, heading }: { slide: Slide; heading: "h1" | "h2" }
     <div className="mt-auto flex flex-col gap-6 sm:gap-8 lg:flex-row lg:items-start lg:justify-between lg:gap-12 lg:pb-[clamp(72px,15svh,122px)]">
       <Heading className={`${titleClass} lg:max-w-[470px]`}>{slide.title}</Heading>
       <div className={`flex flex-col items-start gap-6 lg:pt-1.5 ${slide.textWidth ?? ""}`}>
-        <p className="font-display text-lg leading-[26px] font-normal tracking-normal lg:text-[22px] lg:leading-[30px]">
+        <p className="type-lead">
           {slide.text}
         </p>
         <CtaLink cta={slide.cta} variant="compact" />
@@ -256,6 +256,7 @@ export function Hero() {
                 fill
                 sizes="100vw"
                 preload={i === 0}
+                fetchPriority={i === 0 ? "high" : "low"}
                 placeholder="blur"
                 className="-z-20 object-cover"
                 style={{ objectPosition: slide.position }}

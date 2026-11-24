@@ -25,12 +25,12 @@ export function RightChoice() {
       <div className="relative mx-auto flex w-full flex-col justify-center px-5 py-20 sm:px-8 lg:px-12 xl:px-[76px]">
         <h2
           id="escolha-certa"
-          className="max-w-[660px] font-display text-[28px] leading-9 font-semibold sm:text-[36px] sm:leading-[46px]"
+          className="max-w-[660px] type-h2"
         >
           A escolha certa para quem não quer <br className="hidden lg:block" />
           perder tempo com internet lenta.
         </h2>
-        <p className="mt-6 max-w-[560px] font-display text-base leading-[28px] text-white sm:text-[18px] sm:leading-[30px]">
+        <p className="mt-6 max-w-[560px] type-body text-white">
           Os nossos planos foram pensados para entregar exatamente o que você precisa: velocidade estável, download
           ilimitado e uma experiência fluida em todos os dispositivos.
         </p>

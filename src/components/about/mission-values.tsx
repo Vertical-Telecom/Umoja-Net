@@ -22,10 +22,10 @@ function Card({
 }) {
   return (
     <article aria-labelledby={titleId} className="rounded-3xl border border-line bg-white p-6 sm:p-8">
-      <span className="grid size-11 place-items-center rounded-xl border border-brand-100 bg-brand-50 text-brand-600">
+      <span className="grid size-11 place-items-center rounded-xl border border-brand-100 bg-brand-50 text-brand-950">
         <Icon className="size-5" />
       </span>
-      <h3 id={titleId} className="mt-6 font-display text-lg font-semibold text-foundation-blue-600">
+      <h3 id={titleId} className="mt-6 type-h3 text-foundation-blue-600">
         {title}
       </h3>
       {children}
@@ -38,13 +38,13 @@ export function MissionValues() {
     <section aria-label="Missão, visão e valores" className="mx-auto w-full px-5 sm:px-8 lg:px-12 xl:px-[76px] py-20 sm:py-28">
       <div className="grid gap-6 md:grid-cols-2">
         <Card icon={Gem} title="A nossa missão" titleId="missao">
-          <p className="mt-3 text-base leading-relaxed text-muted">
+          <p className="mt-3 type-body text-muted">
             Levar internet fiável, acessível e humana a pessoas, famílias e negócios, criando ligações que impulsionam o
             estudo, o trabalho, o entretenimento e a inclusão digital em Angola.
           </p>
         </Card>
         <Card icon={Eye} title="A nossa visão" titleId="visao">
-          <p className="mt-3 text-base leading-relaxed text-muted">
+          <p className="mt-3 type-body text-muted">
             Tornar-nos a provedora de internet mais humana e culturalmente consciente de Angola, reconhecida pela
             proximidade com as pessoas e pela qualidade dos nossos serviços.
           </p>
